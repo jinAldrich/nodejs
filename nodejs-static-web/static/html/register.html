@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+<h>这是注册页面</h>
+
+<div class="register">
+    <span>创建你的账号</span>
+    <div class="email">
+        <span>邮箱：</span>
+        <input id="email" type="email" placeholder="请输入邮箱" value=""/>
+    </div>
+    <div class="password">
+        <span>密码：</span>
+        <input id="password" type="password" placeholder="请输入密码" value=""/>
+    </div>
+    <div class="confirm-pwd">
+        <span>确认密码：</span>
+        <input id="confirm-pwd" type="password" placeholder="请输入再次输入密码" value=""/>
+    </div>
+    <div id="create-btn" class="create-btn" onclick="onCreateAccount()">
+        <div>创建</div>
+    </div>
+</div>
+<div id="loading" class="loading">正在创建中...</div>
+
+<script src="../js/register.js"></script>
+</body>
+</html>

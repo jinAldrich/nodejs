@@ -1,0 +1,118 @@
+body {
+    background: rgba(150, 150, 200, 0.3);
+}
+.register {
+    width: 500px;
+    height: 400px;
+    background: rgba(247, 251, 254, 0.4);
+    box-shadow: 5px 5px 1px gray;
+    margin: 40px auto;
+    padding: 20px 0;
+}
+.register span {
+    display: block;
+    width: 500px;
+    height: 25px;
+    padding: 20px 0;
+    text-align: center;
+}
+.email {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+.email span {
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 0px;
+    text-align: center;
+}
+.email input {
+    width: 70%;
+    height: 40px;
+    line-height: 20px;
+    margin: auto 0;
+    background-color:transparent;
+    border:0;
+    border-bottom: 1px solid;
+}
+.password {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+.password span {
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 0px;
+    text-align: center;
+}
+.password input {
+    width: 70%;
+    height: 40px;
+    line-height: 20px;
+    margin: auto 0;
+    background-color:transparent;
+    border:0;
+    border-bottom: 1px solid;
+}
+.confirm-pwd {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+.confirm-pwd span {
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 0px;
+    text-align: center;
+}
+.confirm-pwd input {
+    width: 70%;
+    height: 40px;
+    line-height: 20px;
+    margin: auto 0;
+    background-color:transparent;
+    border:0;
+    border-bottom: 1px solid;
+}
+
+.create-btn {
+    width: 100%;
+    height: 100px;
+}
+.create-btn div {
+    width: 80%;
+    height: 60px;
+    line-height: 60px;
+    color: white;
+    text-align: center;
+    background: darkblue;
+    margin: 20px auto;
+    user-select:none;
+}
+
+.loading{
+    width:160px;
+    height:56px;
+    position: absolute;
+    top:47%;
+    left:30%;
+    line-height:56px;
+    color:black;
+    padding-left:60px;
+    font-size:15px;
+    opacity: 0.7;
+    z-index:9999;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+    visibility: hidden;
+}
