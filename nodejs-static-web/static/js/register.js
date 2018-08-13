@@ -13,17 +13,15 @@ function getValue() {
     console.log('confirmPwd：' + confirmPwd);
     var data = JSON.stringify({
         "email": email,
-        "pwd":pwd
+        "password":pwd
     });
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            console.log(this.responseText);
-        }
+    xhr.addEventListener("readystatechange", function (data) {
+        console.log(data);
     });
-    xhr.open("POST", "http://localhost:8000/doregister");
-    xhr.setRequestHeader("Cache-Control", "no-cache");
+    xhr.open("POST", "http://localhost:3000/doregister");
+    xhr.setRequestHeader("Content-Type", "application/json");
     console.log('data=' + data);
     xhr.send(data);
 }

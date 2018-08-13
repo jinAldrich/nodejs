@@ -1,0 +1,20 @@
+{
+  "name": "exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "EventEmitter.js",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "md5-node": "^1.0.1",
+    "mongodb": "^3.1.1",
+    "mongoose": "^5.2.7",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
