@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页聊天</title>
+    <script src="http://localhost:8080/socket.io/socket.io.js" charset="UTF-8"></script>
+    <script>
+        let sock = io.connect('ws://localhost:8080');
+        setInterval(()=>{
+            sock.emit('a',Math.random(), Math.random())
+        }, 500);
+        sock.on('b', (num)=>{
+            console.log(`接收到服务器发来的数据：${num}`);
+            let div = document.createElement('div');
+            div.innerHTML = `接收到服务器发来的数据：${num}`;
+            document.body.appendChild(div);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
