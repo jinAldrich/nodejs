@@ -4,10 +4,14 @@
   "description": "",
   "main": "Helloword.js",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
     "koa": "^2.5.2",
-    "koa-router": "^7.4.0"
+    "koa-bodyparser": "^4.2.1",
+    "koa-ejs": "^4.1.2",
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4"
   },
   "devDependencies": {},
   "scripts": {
