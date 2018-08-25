@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ART模板</title>
+</head>
+<body>
+
+<h2>这是一个ART模板</h2>
+
+<hr><br>
+
+<h2>数据绑定：<%= list.name %></h2>
+<h2> <%= 1 + 2 %></h2>
+{{list.name}}
+<hr><br>
+
+<h2>条件</h2>
+<% if (num > 10) {%>
+    <span>大于10</span>
+<%} else {%>
+    <span>小于10</span>
+<%}%>
+<hr><br>
+
+<h2>循环</h2>
+
+<ul>
+    <%for (var i = 0; i < arr.length; i++) {%>
+        <li><%= arr[i]%></li>
+    <%}%>
+</ul>
+
+<hr><br>
+<h2>子模板</h2>
+<% include('./public/header.ejs') %>
+
+
+</body>
+</html>
