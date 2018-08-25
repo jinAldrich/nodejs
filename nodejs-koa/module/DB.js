@@ -64,15 +64,31 @@ class DB {
         });
     }
 
-    async update(collectionName, json) {
+    /**
+     *
+     * @param collectionName  数据库表名
+     * @param json1           更新条件
+     * @param json2           更新的值
+     */
+    update(collectionName, json1, json2) {
         console.log("---update---");
+        return new Promise(async (resolve, reject)=>{
+            let db = await this.connect();
+            db.collection(collectionName).updateOne(json1, json2, (err, result)=>{
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(result);
+            });
+        })
 
     }
 
-    async insert(collectionName, json) {
+    insert(collectionName, json) {
         console.log("---insert---");
-        return new Promise((resolve, reject)=>{
-            let db = this.connect();
+        return new Promise(async(resolve, reject)=>{
+            let db = await this.connect();
             if (Array.isArray(json)) {
                 db.collection(collectionName).insertMany(json, function (err, result) {
                     if (err) {
@@ -94,8 +110,18 @@ class DB {
         });
     }
 
-    delete() {
+    delete(collectionName, json) {
         console.log("---delete---");
+        return new Promise(async(resolve, reject)=>{
+            let db = await this.connect();
+            db.collection(collectionName).deleteOne(json, (err, result)=>{
+                if (err) {
+                    reject(err);
+                    return;
+                }
+                resolve(result);
+            });
+        })
     }
 }
 

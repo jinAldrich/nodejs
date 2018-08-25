@@ -27,9 +27,9 @@ router.get("/", async (ctx)=>{
 });
 
 router.get("/news", async (ctx)=>{
-    console.time('start2');
+    console.time('start1');
     let result = await DB.find("userInfo", {});
-    console.timeEnd('start2');
+    console.timeEnd('start1');
 });
 
 
@@ -41,11 +41,27 @@ router.get("/login", async (ctx)=>{
 });
 
 router.get("/register", async (ctx)=>{
-    console.time('start2');
+    console.time('start3');
     let result = await DB.insert("userInfo", {'userId':'10015', 'userName': '孙悟空', 'userPassword':"123456", 'age':27, 'sex':1});
     console.log(result);
-    console.timeEnd('start2');
+    console.timeEnd('start3');
 });
+
+router.get("/delete", async (ctx)=>{
+    console.time('start4');
+    let result = await DB.delete("userInfo", {'userId':'10015'});
+    console.log(result);
+    console.timeEnd('start4');
+});
+
+
+router.get("/update", async (ctx)=>{
+    console.time('start5');
+    let result = await DB.update("userInfo", {'userId':'10005'}, { $set: { userName : "李旋风" } });
+    console.log(result);
+    console.timeEnd('start5');
+});
+
 app.use(router.routes());
 app.use(router.allowedMethods());
 app.listen(8100, '127.0.0.1');
