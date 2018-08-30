@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mongo数据库查询</title>
+    <style>
+        table thead {
+            background-color: gray;
+        }
+        table thead td{
+            width: 10rem;
+            border: 1px;
+            text-align: center;
+        }
+        table tbody td{
+            width: 10rem;
+            background-color: rosybrown;
+        }
+    </style>
+</head>
+<body>
+<h3>显示数据库查询结果</h3>
+<!--<div>-->
+    <!--{{each result}}-->
+    <!--<div>-->
+        <!--<span>{{$index}}</span>-->
+        <!--<span>{{$value}}</span>-->
+    <!--</div>-->
+    <!--{{/each}}-->
+
+<!--</div>-->
+<a href="/add">增加</a>
+
+<br>
+<br>
+<table>
+    <thead>
+        <tr>
+            <td>_id</td>
+            <td>用户Id</td>
+            <td>用户名</td>
+            <td>用户密码</td>
+            <td>年龄</td>
+            <td>性别</td>
+            <td>操作</td>
+        </tr>
+    </thead>
+    <tbody>
+        <% for (var i = 0; i < result.length; i++) {%>
+            <tr>
+                <td><%= result[i]._id%></td>
+                <td><%= result[i].userId%></td>
+                <td><%= result[i].userName%></td>
+                <td><%= result[i].userPassword%></td>
+                <td><%= result[i].age%></td>
+                <% if (result[i].sex == 0) {%>
+                <td>女</td>
+                <%} else {%>
+                <td>男</td>
+                <%}%>
+                <td><a href="/update?id={{@result[i]._id}}">编辑</a> 　<a href="/delete?id=<%=result[i]._id%>">删除</a></td>
+            </tr>
+
+        <%}%>
+    </tbody>
+</table>
+<hr><br>
+</body>
+</html>

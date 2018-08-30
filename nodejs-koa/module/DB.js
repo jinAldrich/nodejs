@@ -3,8 +3,9 @@
  * Created by yujin on 2018/8/25
  *
  */
-
-const MongoClient = require('mongodb').MongoClient;
+var MongoDB = require('mongodb');
+const MongoClient = MongoDB.MongoClient;
+const ObjectID = MongoDB.ObjectID;
 const Config = require('./Config');
 
 class DB {
@@ -57,9 +58,15 @@ class DB {
     async find(collectionName, json) {
         console.log("---find---");
         return new Promise((resolve, reject)=>{
-            this.connect().then((db)=>{
-                let result = db.collection(collectionName).find(json);
-                resolve(result);
+            this.connect().then(async (db)=>{
+                let result = await db.collection(collectionName).find(json);
+                result.toArray((err, data)=>{
+                    if (err) {
+                        reject(err);
+                        return;
+                    }
+                    resolve(data);
+                })
             });
         });
     }
@@ -74,7 +81,7 @@ class DB {
         console.log("---update---");
         return new Promise(async (resolve, reject)=>{
             let db = await this.connect();
-            db.collection(collectionName).updateOne(json1, json2, (err, result)=>{
+            db.collection(collectionName).updateOne(json1, {$set:json2}, (err, result)=>{
                 if (err) {
                     reject(err);
                     return;
@@ -122,6 +129,11 @@ class DB {
                 resolve(result);
             });
         })
+    }
+
+    getObjectId(id) {
+        console.log(id);
+        return new ObjectID(id);
     }
 }
 

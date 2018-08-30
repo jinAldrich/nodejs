@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>更新</h2>
+{{user}}
+<form action="/doUpdate" method="post">
+    用户Id：<input type="text" value="{{@user._id}}" name="_id"/><br><br>
+    用户名：<input type="text" value="{{user.userName}}" name="userName"/><br><br>
+    密码：<input type="password" value="{{user.userPassword}}" name="userPassword"/><br><br>
+    年龄：<input type="number" value="{{user.age}}" name="age"/><br><br>
+    性别：<input type="number" value="{{user.sex}}" name="sex"/><br><br>
+    <input type="submit" value="提交"/>
+</form>
+
+</body>
+</html>
